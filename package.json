@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "gsap": "^3.12.1",
     "vite": "^4.0.4"
   },
   "scripts": {
