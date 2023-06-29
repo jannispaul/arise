@@ -10,13 +10,13 @@ export function animateHome() {
   // Curtain animation
   gsap.from("[data-animate='curtain']", {
     // xPercent: -100,
-    width: "80%",
-    ease: "none",
+    width: "0%",
+    duration: "2",
+    ease: "power4",
     scrollTrigger: {
       trigger: "[data-animate='curtain']",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: true,
+      start: "top 80%",
+      scrub: false,
     },
   });
   gsap.to("[data-animate='img-slider']", {
