@@ -4,11 +4,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 
 export function animateHome() {
-  // console.log("animate", gsap);
   gsap.registerPlugin(ScrollTrigger);
   // Curtain animation
   gsap.from("[data-animate='curtain']", {
-    // xPercent: -100,
     width: "0%",
     duration: "2",
     ease: "power4",
