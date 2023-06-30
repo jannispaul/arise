@@ -4,7 +4,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 
 export function animateHome() {
-  console.log("animate");
   // console.log("animate", gsap);
   gsap.registerPlugin(ScrollTrigger);
   // Curtain animation
@@ -20,7 +19,7 @@ export function animateHome() {
     },
   });
   gsap.to("[data-animate='img-slider']", {
-    xPercent: -100,
+    xPercent: -50,
     ease: "none",
     scrollTrigger: {
       trigger: "[data-animate='img-slider']",
@@ -31,14 +30,12 @@ export function animateHome() {
   });
 
   const headings = gsap.utils.toArray("[animate='text']");
-  console.log(headings);
   headings.forEach((heading) => {
     // Split text into words
     let splitClient = new SplitType(heading, {
       types: "lines, words",
       tagName: "span",
     });
-    console.log(heading, splitClient);
     // text reveal animations
     gsap.from(splitClient.words, {
       y: "100%",
