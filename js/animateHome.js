@@ -5,8 +5,7 @@ import SplitType from "split-type";
 
 export function animateHome() {
   let firstLoad = sessionStorage.getItem("firstLoad");
-
-  let delay = 0.3;
+  let delay = 0.25;
 
   if (firstLoad && JSON.parse(firstLoad)) {
     delay = 1.5;
