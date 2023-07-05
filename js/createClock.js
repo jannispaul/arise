@@ -15,7 +15,7 @@ export function createClock() {
     let now = formatter.format(new Date());
     // Calculate rotation
     let rotation =
-      (360 / (24 * 60)) *
+      (360 / (12 * 60)) *
         (parseInt(now.split(":")[0]) * 60 + parseInt(now.split(":")[1])) -
       45; // icon starts at 45 deg
 

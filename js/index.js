@@ -2,11 +2,13 @@
 import { createClock } from "./createClock";
 import { animateHome } from "./animateHome";
 import { pageTransitions } from "./pageTransitions";
+import { prettyLinks } from "./prettyLinks";
 
 function init() {
   createClock();
   animateHome();
   pageTransitions();
+  prettyLinks();
 }
 
 if (document.readyState == "loading") {
