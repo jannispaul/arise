@@ -2,7 +2,7 @@
 import { gsap } from "gsap";
 
 export function processHover() {
-  console.log("hover");
+  //   console.log("hover");
   const allProcessSteps = gsap.utils.toArray("[data-element='process-item']");
   const imageWrap = document.querySelector(".process_image_wrap");
   const image = document.querySelector(".process_image");

@@ -7,7 +7,7 @@ export function animateHome() {
   let firstLoad = sessionStorage.getItem("firstLoad");
   let delay = 0.25;
 
-  if (firstLoad && JSON.parse(firstLoad)) {
+  if (firstLoad && JSON.parse(firstLoad) && window.location.pathname == "/") {
     delay = 1.25;
   }
 
