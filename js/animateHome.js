@@ -8,22 +8,32 @@ export function animateHome() {
   let delay = 0.25;
 
   if (firstLoad && JSON.parse(firstLoad)) {
-    delay = 1.5;
+    delay = 1.25;
   }
 
   gsap.registerPlugin(ScrollTrigger);
 
   // Curtain animation
-  gsap.from("[data-animate='curtain']", {
+  gsap.from("[data-animate='curtain-inner']", {
     width: "0%",
     duration: "2",
     ease: "power4",
     scrollTrigger: {
-      trigger: "[data-animate='curtain']",
+      trigger: "[data-animate='curtain-inner']",
       start: "top 80%",
       scrub: false,
     },
   });
+  gsap.from("[data-animate='curtain-outer']", {
+    width: "80%",
+    scrollTrigger: {
+      trigger: "[data-animate='curtain-outer']",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 1,
+    },
+  });
+  // Image slider
   gsap.to("[data-animate='img-slider']", {
     xPercent: -50,
     ease: "none",
