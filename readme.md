@@ -36,3 +36,7 @@ document.head.appendChild(ele)
 ### Minify and copy to webflow
 
 `pnpm run build`
+
+### Purge CDN cache
+
+[https://www.jsdelivr.com/tools/purge]
