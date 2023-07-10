@@ -4,6 +4,7 @@ import { animateHome } from "./animateHome";
 import { pageTransitions } from "./pageTransitions";
 import { prettyLinks } from "./prettyLinks";
 import { processHover } from "./processHover";
+import { projectHover } from "./projectHover";
 
 function init() {
   createClock();
@@ -11,6 +12,7 @@ function init() {
   pageTransitions();
   prettyLinks();
   processHover();
+  projectHover();
 }
 
 if (document.readyState == "loading") {
