@@ -4,14 +4,22 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 
 export function animateHome() {
+  gsap.registerPlugin(ScrollTrigger);
   let firstLoad = sessionStorage.getItem("firstLoad");
   let delay = 0.25;
 
   if (firstLoad && JSON.parse(firstLoad) && window.location.pathname == "/") {
     delay = 1.25;
-  }
 
-  gsap.registerPlugin(ScrollTrigger);
+    // Nav fade in on initial home page load
+    gsap.from("[data-element='nav']", {
+      y: "-100%",
+      opacity: 0,
+      duration: "2",
+      ease: "power4",
+      delay: delay,
+    });
+  }
 
   // Curtain animation
   gsap.from("[data-animate='curtain-inner']", {
