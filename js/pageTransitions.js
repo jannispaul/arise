@@ -11,6 +11,7 @@ export function pageTransitions() {
     });
   }
   gsap.to(".transition", {
+    display: "block",
     yPercent: "100",
     duration: 0,
     delay: 0.5,

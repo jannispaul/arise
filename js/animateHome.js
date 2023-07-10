@@ -18,8 +18,14 @@ export function animateHome() {
       duration: "2",
       ease: "power4",
       delay: delay,
+      autoAlpha: 0, // Prevent flash of unstyled content
     });
   }
+
+  // Show nav
+  gsap.from("[data-element='nav']", {
+    autoAlpha: 0, // Prevent flash of unstyled content
+  });
 
   // Curtain animation
   gsap.from("[data-animate='curtain-inner']", {
@@ -60,6 +66,9 @@ export function animateHome() {
       types: "lines, words",
       tagName: "span",
     });
+    gsap.from(heading, {
+      autoAlpha: 0,
+    });
 
     let headingDelay = delay;
     index > 0 && (headingDelay = 0);
@@ -92,6 +101,7 @@ export function animateHome() {
       duration: 1,
       ease: "power4.out",
       delay: imageDelay,
+      autoAlpha: 0, // Prevent flash of unstyled content
       scrollTrigger: {
         start: "top 70%",
         trigger: image,
