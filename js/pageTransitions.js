@@ -1,12 +1,15 @@
 import { gsap } from "gsap";
 
 export function pageTransitions() {
-  // On page load
-  gsap.to(".transition", {
-    yPercent: "-100",
-    duration: 0.5,
-    ease: "power4.in",
-  });
+  // Dont run load transion on home page
+  if (window.location.pathname !== "/") {
+    // On page load
+    gsap.to(".transition", {
+      yPercent: "-100",
+      duration: 0.5,
+      ease: "power4.in",
+    });
+  }
   gsap.to(".transition", {
     yPercent: "100",
     duration: 0,
@@ -31,7 +34,9 @@ export function pageTransitions() {
       link = linkElement.getAttribute("href");
 
       // Check if link is internal, is not anchor, and doesnt open in new tab
-      if (
+      if (linkElement.getAttribute("href") === "/") {
+        redirect();
+      } else if (
         link.indexOf("#") === -1 &&
         linkElement.getAttribute("target") !== "_blank"
       ) {
