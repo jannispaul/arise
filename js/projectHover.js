@@ -1,5 +1,10 @@
 // @ts-check
 export function projectHover() {
+  function convertRemToPixels(rem) {
+    return (
+      rem * parseFloat(getComputedStyle(document.documentElement).fontSize)
+    );
+  }
   // Create the "View case study" text element
   const caseStudyText = document.createElement("div");
   caseStudyText.textContent = "View case study";
@@ -24,9 +29,9 @@ export function projectHover() {
     projectImg.addEventListener("mousemove", (event) => {
       // Position the "View case study" text to follow the cursor
       // @ts-ignore
-      caseStudyText.style.left = event.clientX + 40 + "px";
+      caseStudyText.style.left = event.clientX + convertRemToPixels(1.5) + "px";
       // @ts-ignore
-      caseStudyText.style.top = event.clientY + "px";
+      caseStudyText.style.top = event.clientY + convertRemToPixels(1.5) + "px";
     });
 
     projectImg.addEventListener("mouseout", () => {
