@@ -40,3 +40,5 @@ document.head.appendChild(ele)
 ### Purge CDN cache
 
 [https://www.jsdelivr.com/tools/purge]
+
+Enter the url: `https://cdn.jsdelivr.net/gh/jannispaul/arise/dist/assets/index.js`
