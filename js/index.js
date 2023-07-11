@@ -5,6 +5,7 @@ import { pageTransitions } from "./pageTransitions";
 import { prettyLinks } from "./prettyLinks";
 import { processHover } from "./processHover";
 import { projectHover } from "./projectHover";
+import { magneticHover } from "./magneticHover";
 
 function init() {
   createClock();
@@ -13,6 +14,7 @@ function init() {
   prettyLinks();
   processHover();
   projectHover();
+  magneticHover();
 }
 
 if (document.readyState == "loading") {
