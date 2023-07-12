@@ -1,7 +1,11 @@
+//@ts-check
+
 export function magneticHover() {
-  // ====== DEFAULT DECLARE ====== //
+  /**
+   * @type {NodeListOf<HTMLElement>} buttonBox
+   */
   const buttons = document.querySelectorAll("[data-element='process-item']");
-  // ======BUTTON EVENT====== //
+
   buttons.forEach((buttonBox) => {
     buttonBox.addEventListener("mousemove", (e) => {
       const position = buttonBox.getBoundingClientRect();
