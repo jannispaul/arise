@@ -3,14 +3,13 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 
-export function animateHome() {
+export function animateElements() {
   gsap.registerPlugin(ScrollTrigger);
   let firstLoad = sessionStorage.getItem("firstLoad");
   let delay = 0.25;
 
   if (firstLoad && JSON.parse(firstLoad) && window.location.pathname == "/") {
     delay = 1.25;
-
     // Nav fade in on initial home page load
     gsap.from("[data-element='nav']", {
       y: "-100%",
@@ -80,7 +79,7 @@ export function animateHome() {
       ease: "power4.out",
       stagger: 0.02,
       autoAlpha: 0, // Prevent flash of unstyled content
-      delay: delay,
+      delay: headingDelay,
       scrollTrigger: {
         start: "top 70%",
         trigger: heading,

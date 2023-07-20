@@ -1,6 +1,6 @@
 // @ts-check
 import { createClock } from "./createClock";
-import { animateHome } from "./animateHome";
+import { animateElements } from "./animateElements";
 import { pageTransitions } from "./pageTransitions";
 import { prettyLinks } from "./prettyLinks";
 import { processHover } from "./processHover";
@@ -9,7 +9,7 @@ import { magneticHover } from "./magneticHover";
 
 function init() {
   createClock();
-  animateHome();
+  animateElements();
   pageTransitions();
   prettyLinks();
   processHover();
