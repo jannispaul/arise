@@ -6,8 +6,10 @@ import { prettyLinks } from "./prettyLinks";
 import { processHover } from "./processHover";
 import { projectHover } from "./projectHover";
 import { magneticHover } from "./magneticHover";
+import { smartVideo } from "./smartVideo";
 
 function init() {
+  smartVideo();
   createClock();
   animateElements();
   pageTransitions();
