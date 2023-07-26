@@ -2,15 +2,18 @@
 export function smartVideo() {
   // Get all videos
   let allVideos = Array.from(document.querySelectorAll("video"));
-
+  let screenSizes = ["mobile", "tablet", "desktop"];
   // Set screen size
-  let screenSize = "mobile";
+  let screenSize;
   if (window.matchMedia("(max-width: 767px)").matches) {
-    screenSize = "mobile";
+    // Set Mobile
+    screenSize = screenSizes[0];
   } else if (window.matchMedia("(max-width: 991px)").matches) {
-    screenSize = "tablet";
+    // Set Tablet
+    screenSize = screenSizes[1];
   } else {
-    screenSize = "desktop";
+    // Set Dekstop
+    screenSize = screenSizes[2];
   }
 
   /**
@@ -18,6 +21,33 @@ export function smartVideo() {
    * @param {HTMLVideoElement} video
    */
   function setVideoSource(video) {
+    let sourceSizes = [];
+    let appropriateSize = screenSize;
+    // Get all set sizes for video source
+    for (let source in video.children) {
+      // @ts-ignore
+      let videoSourceSize = video.children[source]?.dataset?.size;
+      // Push all available source sizes to array
+      if (!sourceSizes.includes(videoSourceSize) && videoSourceSize) {
+        sourceSizes.push(videoSourceSize);
+      }
+    }
+    // Check if current screenSize is not set as sourceSize for video
+    function setAppropriateSize() {
+      // If size is not included in sizes
+      if (!sourceSizes.includes(appropriateSize)) {
+        // Try the next size up in the screenSize Array
+        appropriateSize = screenSizes[screenSizes.indexOf(appropriateSize) + 1];
+      } else {
+        return;
+      }
+      // If the size is still not found run the function again
+      setAppropriateSize();
+    }
+
+    setAppropriateSize();
+
+    // Loop through all sources and set the appropriate size source
     for (let source in video.children) {
       /**
        * @type {HTMLSourceElement} videoSource
@@ -30,7 +60,7 @@ export function smartVideo() {
         if (!videoSource.dataset?.size && videoSource.dataset.src) {
           videoSource.src = videoSource.dataset.src;
           // Otherwise only set the source for videoSource with active screenSize
-        } else if (videoSource.dataset.size == screenSize && videoSource.dataset.src) {
+        } else if (videoSource.dataset.size == appropriateSize && videoSource.dataset.src) {
           videoSource.src = videoSource.dataset.src;
         }
       }
