@@ -47,14 +47,23 @@ export function animateElements() {
     },
   });
   // Image slider
-  gsap.to("[data-animate='img-slider']", {
-    xPercent: -50,
-    ease: "none",
+  // gsap.to("[data-animate='img-slider']", {
+  //   xPercent: -50,
+  //   ease: "none",
+  //   scrollTrigger: {
+  //     trigger: "[data-animate='img-slider']",
+  //     start: "top bottom",
+  //     end: "bottom top",
+  //     scrub: 1,
+  //   },
+  // });
+  gsap.from("[data-animate='name-badge']", {
+    yPercent: 200,
+    ease: "power4",
     scrollTrigger: {
-      trigger: "[data-animate='img-slider']",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: 1,
+      trigger: "[data-animate='name-badge']",
+      start: "top 95%",
+      scrub: 0,
     },
   });
 
