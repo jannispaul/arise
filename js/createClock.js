@@ -1,9 +1,18 @@
+//@ts-check
 export function createClock() {
   const timeElement = document.querySelector("[data-element='time']");
+  /**
+   * @type HTMLElement | null
+   */
   const clockElement = document.querySelector("[data-element='clock']");
 
   function updateTimeAndClock() {
-    // Create dateformatter
+    if (!timeElement || !clockElement) return;
+
+    /**
+     * Date formatter options
+     * @type Intl.DateTimeFormatOptions
+     */
     let options = {
         timeZone: "Europe/Berlin",
         hour: "numeric",
@@ -14,10 +23,7 @@ export function createClock() {
     // Create date
     let now = formatter.format(new Date());
     // Calculate rotation
-    let rotation =
-      (360 / (12 * 60)) *
-        (parseInt(now.split(":")[0]) * 60 + parseInt(now.split(":")[1])) -
-      45; // icon starts at 45 deg
+    let rotation = (360 / (12 * 60)) * (parseInt(now.split(":")[0]) * 60 + parseInt(now.split(":")[1])) - 45; // icon starts at 45 deg
 
     // Set time
     timeElement.innerHTML = now;
