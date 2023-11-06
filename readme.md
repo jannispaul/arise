@@ -41,4 +41,4 @@ document.head.appendChild(ele)
 
 [https://www.jsdelivr.com/tools/purge]
 
-Enter the url: `https://cdn.jsdelivr.net/gh/jannispaul/arise/dist/assets/index.js`
+Enter the url: `https://cdn.jsdelivr.net/gh/jannispaul/arise@latest/dist/assets/index.js`
