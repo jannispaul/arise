@@ -107,7 +107,7 @@ export function animateElements() {
       opacity: 0,
       clipPath: "inset(0 100% 0 0%)",
       duration: 1,
-      ease: "power4.out",
+      ease: "power4.inOut",
       delay: imageDelay,
       autoAlpha: 0, // Prevent flash of unstyled content
       scrollTrigger: {
