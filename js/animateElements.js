@@ -105,9 +105,9 @@ export function animateElements() {
     gsap.from(image, {
       //width: "0%",
       opacity: 0,
-      clipPath: "inset(0 100% 0 0%)",
+      clipPath: "inset(0 0% 100% 0%)",
       duration: 1,
-      ease: "power4.inOut",
+      ease: "power3.inOut",
       delay: imageDelay,
       autoAlpha: 0, // Prevent flash of unstyled content
       scrollTrigger: {
