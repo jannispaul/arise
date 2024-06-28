@@ -90,7 +90,7 @@ export function animateElements() {
       autoAlpha: 0, // Prevent flash of unstyled content
       delay: headingDelay,
       scrollTrigger: {
-        start: "top 70%",
+        start: "top 80%",
         trigger: heading,
       },
     });
@@ -111,7 +111,7 @@ export function animateElements() {
       delay: imageDelay,
       autoAlpha: 0, // Prevent flash of unstyled content
       scrollTrigger: {
-        start: "top 70%",
+        start: "top 80%",
         trigger: image,
         //scrub: true,
       },
